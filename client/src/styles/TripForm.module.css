@@ -2,7 +2,7 @@
     margin: 0 auto;
     width: 100%;
     max-width: 600px;
-    background-color: #f4f4f4;
+    background-color: #7e7c96;
     padding: 20px;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
@@ -21,7 +21,7 @@
 .tripForm input, .tripForm textarea {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #c08787;
     border-radius: 4px;
     margin-bottom: 20px;
 }
@@ -29,7 +29,7 @@
 .tripForm button {
     padding: 10px;
     font-size: 16px;
-    background-color: #f9a857;
+    background-color: #043c26;
     color: white;
     border: none;
     border-radius: 4px;
@@ -37,5 +37,6 @@
 }
 
 .tripForm button:hover {
-    background-color: #e08e38;
+    background-color: #27308f;
 }
+
