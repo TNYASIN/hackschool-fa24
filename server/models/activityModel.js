@@ -9,7 +9,7 @@ const activitySchema = new mongoose.Schema({
 });
 
 // Create a model for our activity based on the schema
+const Activity = mongoose.model('Activity', activitySchema); // 'Activity' is the name of the model
 
-
-// Export model schema
-module.exports = 'activitySchema';
+// Export the model
+module.exports = Activity;

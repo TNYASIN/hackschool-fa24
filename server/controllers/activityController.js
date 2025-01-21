@@ -52,9 +52,9 @@ const postActivity = async (req, res) => {
         review
     })
     res.status(200).json(newActivity);
-} */
+} 
 
-module.exports = { getActivity, postActivity };
+module.exports = { getActivity, postActivity };*/
 
 const mongoose = require('mongoose');
 const Activities = require("../models/activityModel");
