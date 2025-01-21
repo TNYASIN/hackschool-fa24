@@ -4,11 +4,12 @@ const router = express.Router();
 const tripController = require('../controllers/tripController');
 const activityController = require('../controllers/activityController');
 
-// Add API routes here
-    router.get('/trip', tripController.getTrip);
-    // router.get('/name', tripController.getTripName);
-    router.post('/activity',activityController.getActivity);
-    router.post('/activity',activityController.postActivity);
+// Add API routes for trips
+router.get('/trip', tripController.getTrip);  // Get all trips
+router.post('/trip', tripController.postTrip);  // Create a new trip
 
+// Add API routes for activities
+router.get('/activity', activityController.getActivity);  // Get all activities
+router.post('/activity', activityController.postActivity);  // Create a new activity
 
 module.exports = router;

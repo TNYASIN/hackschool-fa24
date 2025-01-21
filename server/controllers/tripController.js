@@ -65,33 +65,48 @@ const postTrip = async (req, res) => {
 }
 
 
-module.exports = { getTrip, postTrip }; */
+
+module.exports = { getTrip, postTrip };*/
+
+// controllers/tripController.js
 const Trips = require('../models/tripModel');
 
-// Create a GET async function to get all trips using the trip model schema
+// GET: Fetch all trips from the database
 const getTrip = async (req, res) => {
-    const trip = await Trips.find();
-    res.status(200).json(trip);
-}
+    try {
+        const trips = await Trips.find(); // Fetch all trips
+        res.status(200).json(trips); // Return trips as JSON
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error fetching trips' });
+    }
+};
 
-// Create a POST async function to add a trip using the trip model schema
+// POST: Create a new trip
 const postTrip = async (req, res) => {
     const { destination, startDate, endDate, journalEntry } = req.body;
 
+    // Validate required fields
     if (!destination || !startDate || !journalEntry) {
-        return res.status(400).json({ error: 'Invalid request' });
+        return res.status(400).json({ error: 'Destination, start date, and journal entry are required' });
     }
 
     const start = new Date(startDate);
     const end = endDate ? new Date(endDate) : null;
 
+    // Check if end date is valid
     if (end && start > end) {
-        return res.status(400).json({ error: 'End date must be after start date' });
+        return res.status(400).json({ error: 'End date must be after the start date' });
     }
-    else {
-        const newTrip = await Trips.create(req.body);
-        res.status(200).json(newTrip);
+
+    // Create and save the new trip
+    try {
+        const newTrip = await Trips.create({ destination, startDate, endDate, journalEntry });
+        res.status(201).json(newTrip); // Send the newly created trip as response
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error creating trip' });
     }
-}
+};
 
 module.exports = { getTrip, postTrip };
