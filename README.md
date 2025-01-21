@@ -7,7 +7,6 @@ Welcome to my repository for ACM Hack's Hack School for Fall 2024!
 Hack Textbook [here](https://hack.acmucsd.com/hack-school) 
 ## Slides and Resources
 
-As the series goes on, we'll add the slides, recordings, and code here!
 
 Part 1 (10/15) - Intro to HTML/CSS - [Slide Deck](https://acmurl.com/hackschoolfa24-1) - [Code](https://github.com/acmucsd/hackschool-fa24/tree/part1) - [Recording](https://acmurl.com/hackschoolfa24-1-video)
 
