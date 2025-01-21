@@ -1,5 +1,5 @@
 import axios from 'axios';
-const  serverURL = 'https://tripsandactivities.onrender.com';
+const  serverURL = 'http://localhost:3000';
 const TravelAPi = {
     getTrip: () => axios.get('${serverUrl}/api/trip');
     getActivity:  () => axios.get('${serverUrl}/api/activity');
