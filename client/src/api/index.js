@@ -1,8 +1,12 @@
 import axios from 'axios';
-const  serverURL = 'http://localhost:3000';
+
+const serverURL = 'http://localhost:3000';
+
 const TravelAPi = {
-    getTrip: () => axios.get('${serverUrl}/api/trip'),
-    getActivity:  () => axios.get('${serverUrl}/api/activity'),
-    postTrip: (payload) => axios.get('${serverUrl}/api/trip'),
-    postActivity:  (payload) => axios.get('${serverUrl}/api/activity'),
-}
+    getTrip: () => axios.get(`${serverURL}/api/trip`),
+    getActivity: () => axios.get(`${serverURL}/api/activity`),
+    postTrip: (payload) => axios.post(`${serverURL}/api/trip`, payload),
+    postActivity: (payload) => axios.post(`${serverURL}/api/activity`, payload),
+};
+
+export default TravelAPi;
